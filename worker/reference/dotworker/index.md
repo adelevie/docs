@@ -208,3 +208,16 @@ The following syntax is valid in `.worker` files:
     </td>
   </tr>
 </table>
+
+### Pulling Gems From Git Repositories
+
+This is useful for including gem forks that haven't been cut into the main gem.
+
+This solution is more of a hack until something more streamlined is built. But, it works.
+
+For example, you might fork a gem and send a pull request. Rather than wait for the gem owner to accept the request and cut a new gem (could take minutes, days, weeks, or even months), you can use your version of the gem right away. Here's how:
+
+1. In the top level of your worker's directory, `git clone git://github.com/YOUR-FORK/SOME-GEM.git`
+2. In your `.worker` file, add the line `dir "SOME-GEM"`
+3. In your Ruby file(s), add the line `$: << 'SOME-GEM/lib'` and then `require` the gem as usual.
+4. Check the gem's `.gemspec` or `Gemfile` to find its gem dependencies. For each dependency, add the line to your `.worker`: `gem "gem-name"`.
