@@ -15,3 +15,5 @@ Detailed instruction for different environments: https://github.com/mojombo/jeky
 3. Open browser at `http://localhost:4000/`
 
 ## An arbitrary commit
+
+Another token commit
