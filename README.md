@@ -13,3 +13,5 @@ Detailed instruction for different environments: https://github.com/mojombo/jeky
 1. Go to project directory
 2. Type `jekyll`
 3. Open browser at `http://localhost:4000/`
+
+## An arbitrary commit
